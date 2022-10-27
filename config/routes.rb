@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  root "pages#index"
   get "pages/index" 
+  root "pages#index"
+
+  get "pages/form"
+  post "pages/", to: "pages#create"
 end

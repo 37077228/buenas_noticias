@@ -1,0 +1,23 @@
+<h2 class="container">Creando nueva Noticia</h2>
+<%= form_with model: @noticias do |form| %>
+    <div class='container'>
+        <%=form.label :encabezado %>
+        <%= form.text_field :encabezado, autofocus: true %>
+    </div>
+    <div class='container'>
+        <%=form.label :cuerpo %>
+        <%= form.text_field :cuerpo %>
+    </div>
+    <div class='container'>
+        <%=form.label :link %>
+        <%= form.text_field :link %>
+    </div>
+    <div class='container'>
+        <%=form.label :tipo %>
+        <%= form.number_field :tipo %>
+    </div>
+    <div class='container'>
+        <%= form.submit "Agregar nueva Noticia" %>
+    </div>
+<% end %>
+
