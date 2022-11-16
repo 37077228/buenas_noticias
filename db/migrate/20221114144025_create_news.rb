@@ -4,7 +4,7 @@ class CreateNews < ActiveRecord::Migration[7.0]
       t.string :header
       t.text :body
       t.string :link
-      t.string :types
+      t.integer :types
 
       t.timestamps
     end

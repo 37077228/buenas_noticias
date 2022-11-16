@@ -2,6 +2,8 @@
 
 <h1>News</h1>
 
+<%= link_to "New news", new_news_path %>
+
 <div id="news">
   <% @news.each do |news| %>
     <%= render news %>

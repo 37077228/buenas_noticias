@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_07_221636) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_14_144025) do
   create_table "news", force: :cascade do |t|
     t.string "header"
     t.text "body"
     t.string "link"
-    t.string "types"
+    t.integer "types"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

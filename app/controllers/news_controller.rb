@@ -3,7 +3,8 @@ class NewsController < ApplicationController
 
   # GET /news or /news.json
   def index
-    @news = News.all
+    # @news = News.all
+    @news = News.search(params[:search]).order(created_at: :desc)
   end
 
   # GET /news/1 or /news/1.json
@@ -26,10 +27,8 @@ class NewsController < ApplicationController
     respond_to do |format|
       if @news.save
         format.html { redirect_to news_url(@news), notice: "News was successfully created." }
-        format.json { render :show, status: :created, location: @news }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @news.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -39,10 +38,8 @@ class NewsController < ApplicationController
     respond_to do |format|
       if @news.update(news_params)
         format.html { redirect_to news_url(@news), notice: "News was successfully updated." }
-        format.json { render :show, status: :ok, location: @news }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @news.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,7 +50,6 @@ class NewsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to news_index_url, notice: "News was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
