@@ -1,6 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>News</h1>
+<%= link_to 'All', news_index_path %>
+<%= render partial: 'category', collection: @categories, class: 'container' %>
+<br>
+<br>
 
 <%= link_to "New news", new_news_path %>
 

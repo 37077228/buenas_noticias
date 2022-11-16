@@ -1,9 +1,9 @@
 class News < ApplicationRecord
+  belongs_to :category
 
   validates :header, presence: true
   validates :body, presence: true
   validates :link, presence: true
-  validates :types, presence: true
 
   def self.search(text)
     if text and !text.empty?
